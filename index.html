@@ -1,0 +1,267 @@
+   
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Azhagirishankar K — Full Stack Developer</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    /* extra custom styles */
+    :root{--glass: rgba(255,255,255,0.06);} 
+    .frost {
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    /* animated gradient */
+    .hero-bg{
+      background: linear-gradient(270deg,#0ea5e9,#7c3aed,#ef4444);
+      background-size:600% 600%;
+      animation: gradient 12s ease infinite;
+    }
+    @keyframes gradient{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    /* subtle card tilt */
+    .tilt{transition: transform .25s ease, box-shadow .25s ease}
+    .tilt:hover{transform: translateY(-8px) rotateZ(-1deg); box-shadow: 0 20px 40px rgba(2,6,23,0.4)}
+    .skill-bar{height:8px;border-radius:9999px}
+  </style>
+</head>
+<body class="bg-[#0b1220] text-slate-200 leading-relaxed antialiased">
+  <!-- top nav -->
+  <header class="fixed w-full z-40 top-0 left-0">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center text-black font-bold">AK</div>
+        <div class="hidden sm:block">
+          <div class="text-sm font-semibold">Azhagirishankar K</div>
+          <div class="text-xs text-slate-300">Full Stack Developer</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#projects" class="hover:text-white">Projects</a>
+        <a href="#skills" class="hover:text-white">Skills</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+        <a href="AzhagirishankarK_Resume.pdf" download class="ml-2 px-3 py-2 bg-gradient-to-r from-cyan-400 to-indigo-500 text-black rounded-md font-medium">Resume</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="menuBtn" class="p-2 rounded-md bg-white/5">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="hero-bg pt-24 pb-20">
+    <div class="max-w-6xl mx-auto px-6 flex gap-8 items-center">
+      <div class="flex-1" data-aos="fade-right">
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">Azhagirishankar</span></h1>
+        <p class="mt-3 text-lg text-slate-100/90">I build fast, beautiful web apps. <span id="typed" class="font-medium text-cyan-100"></span></p>
+        <p class="mt-6 text-slate-200/80 max-w-lg">Full Stack Developer with 2 years of experience in PHP, Laravel, MySQL, and modern frontend frameworks. I build scalable web applications and RESTful APIs.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <a href="#projects" class="px-5 py-3 bg-white/10 rounded-md frost hover:scale-105 transition">View Projects</a>
+          <a href="mailto:azhagirishankar5@gmail.com" class="px-5 py-3 border border-white/10 rounded-md">Hire Me</a>
+        </div>
+        <div class="mt-8 flex gap-4 text-xs text-slate-300">
+          <div class="frost p-3 rounded-md">Location: Tirupur, Tamil Nadu</div>
+          <div class="frost p-3 rounded-md">2 yrs experience • PHP / Laravel</div>
+        </div>
+      </div>
+      <div class="w-80 hidden lg:block" data-aos="zoom-in">
+        <div class="tilt p-6 rounded-2xl frost">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd" alt="profile" class="rounded-xl mb-4" />
+          <h3 class="font-semibold">Azhagirishankar K</h3>
+          <p class="text-sm text-slate-300">Full Stack Developer</p>
+          <div class="mt-4 text-sm text-slate-300">
+            <div>GitHub: <a href="https://github.com/Jerry5kas" class="underline" target="_blank">Jerry5kas</a></div>
+            <div>LinkedIn: <a href="https://linkedin.com/in/azhagiri-shankar" class="underline" target="_blank">azhagiri-shankar</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- about -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-16" data-aos="fade-up">
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+      <div class="md:col-span-2">
+        <h2 class="text-2xl font-bold">About Me</h2>
+        <p class="mt-4 text-slate-300">I'm a Full Stack Developer with 2 years of experience in PHP, Laravel, MySQL, and modern frontend frameworks. I specialize in building scalable web applications, RESTful APIs, and third-party integrations. I enjoy creating fast, accessible user interfaces and reliable backend systems.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-lg frost">
+            <h4 class="font-semibold">Experience</h4>
+            <p class="text-sm text-slate-300 mt-2">Laravel Full Stack Developer at Appstronauts IT Solutions (Oct 2024 - Present). Previously at Aaron Infotech (Jan 2024 - Sep 2024).</p>
+          </div>
+          <div class="p-4 rounded-lg frost">
+            <h4 class="font-semibold">Education</h4>
+            <p class="text-sm text-slate-300 mt-2">M.Sc. Computer Science (2023), B.Sc. Computer Science (2021)</p>
+          </div>
+        </div>
+      </div>
+      <aside class="p-4 rounded-lg frost">
+        <h4 class="font-semibold">Quick Info</h4>
+        <ul class="mt-3 text-sm text-slate-300 space-y-2">
+          <li><strong>Location:</strong> Tirupur, Tamil Nadu</li>
+          <li><strong>Email:</strong> azhagirishankar5@gmail.com</li>
+          <li><strong>Github:</strong> github.com/Jerry5kas</li>
+          <li><strong>Resume:</strong> <a href="AzhagirishankarK_Resume.pdf" download class="underline">Download</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- projects -->
+  <section id="projects" class="bg-[rgba(255,255,255,0.02)] py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-6">Selected Projects</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- project card -->
+        <article class="p-5 rounded-xl tilt frost" data-aos="fade-up">
+          <div class="h-40 rounded-md overflow-hidden mb-4 bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center"> 
+            <span class="text-lg font-semibold">Jippy Mart</span>
+          </div>
+          <h3 class="font-semibold">Food Delivery Platform</h3>
+          <p class="text-sm text-slate-300 mt-2">Built a role-based multi-panel system (Admin, Customer, Restaurant) with real-time order tracking and secure authentication.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="px-3 py-1 rounded-md bg-white/10" onclick="openProjectModal('Jippy Mart','Built a role-based multi-panel system (Admin, Customer, Restaurant) with real-time order tracking and secure authentication.')">Read</button>
+            <a href="#" class="text-sm underline">Live</a>
+          </div>
+        </article>
+        <article class="p-5 rounded-xl tilt frost" data-aos="fade-up" data-aos-delay="80">
+          <div class="h-40 rounded-md overflow-hidden mb-4 bg-gradient-to-tr from-rose-500 to-orange-300 flex items-center justify-center"> 
+            <span class="text-lg font-semibold">Smart Ledger Book</span>
+          </div>
+          <h3 class="font-semibold">Digital Credit Ledger System</h3>
+          <p class="text-sm text-slate-300 mt-2">Created a small business Udhar Khata app with ledger reports, credit/debit tracking, and responsive UI for 200+ businesses.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="px-3 py-1 rounded-md bg-white/10" onclick="openProjectModal('Smart Ledger Book','Developed Smart Ledger Book, digitizing financial records for 200+ small businesses with ledger reports and credit/debit tracking.')">Read</button>
+            <a href="#" class="text-sm underline">Live</a>
+          </div>
+        </article>
+        <article class="p-5 rounded-xl tilt frost" data-aos="fade-up" data-aos-delay="160">
+          <div class="h-40 rounded-md overflow-hidden mb-4 bg-gradient-to-tr from-green-400 to-cyan-300 flex items-center justify-center"> 
+            <span class="text-lg font-semibold">Fony Fox</span>
+          </div>
+          <h3 class="font-semibold">Social Media App</h3>
+          <p class="text-sm text-slate-300 mt-2">Built a social media app with voice typing + REST API backend, improving user engagement and interaction.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="px-3 py-1 rounded-md bg-white/10" onclick="openProjectModal('Fony Fox','Built Fony Fox, a social media app with voice typing + REST API backend, improving user engagement.')">Read</button>
+            <a href="#" class="text-sm underline">Live</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- skills -->
+  <section id="skills" class="max-w-6xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-2xl font-bold">Skills</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div>
+        <p class="text-slate-300">Backend & Architecture</p>
+        <div class="mt-4 space-y-4">
+          <div>
+            <div class="flex justify-between text-sm"><span>PHP / Laravel</span><span>90%</span></div>
+            <div class="bg-white/5 mt-2 rounded-full skill-bar"><div class="bg-gradient-to-r from-cyan-400 to-indigo-500 rounded-full" style="width:90%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm"><span>MySQL / Database</span><span>85%</span></div>
+            <div class="bg-white/5 mt-2 rounded-full skill-bar"><div class="bg-gradient-to-r from-green-400 to-cyan-400 rounded-full" style="width:85%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm"><span>Firebase / APIs</span><span>80%</span></div>
+            <div class="bg-white/5 mt-2 rounded-full skill-bar"><div class="bg-gradient-to-r from-orange-400 to-red-400 rounded-full" style="width:80%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-slate-300">Frontend & Tools</p>
+        <div class="mt-4 space-y-4">
+          <div>
+            <div class="flex justify-between text-sm"><span>Tailwind CSS / Alpine.js</span><span>88%</span></div>
+            <div class="bg-white/5 mt-2 rounded-full skill-bar"><div class="bg-gradient-to-r from-pink-400 to-rose-400 rounded-full" style="width:88%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm"><span>React.js / JavaScript</span><span>75%</span></div>
+            <div class="bg-white/5 mt-2 rounded-full skill-bar"><div class="bg-gradient-to-r from-yellow-300 to-orange-400 rounded-full" style="width:75%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm"><span>Git / GitHub</span><span>85%</span></div>
+            <div class="bg-white/5 mt-2 rounded-full skill-bar"><div class="bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full" style="width:85%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" class="py-16 bg-[rgba(255,255,255,0.01)]">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-2xl font-bold">Contact</h2>
+      <p class="mt-3 text-slate-300">Want to collaborate? Send a message — this form is front-end only. Replace with your backend endpoint when ready.</p>
+      <form id="contactForm" class="mt-6 grid grid-cols-1 gap-4">
+        <input class="p-3 rounded-md bg-white/5" placeholder="Your name" required />
+        <input class="p-3 rounded-md bg-white/5" placeholder="Your email" type="email" required />
+        <textarea class="p-3 rounded-md bg-white/5" rows="4" placeholder="Message"></textarea>
+        <div class="flex items-center gap-3">
+          <button type="submit" class="px-4 py-2 rounded-md bg-gradient-to-r from-cyan-400 to-indigo-500 text-black">Send</button>
+          <span id="formStatus" class="text-sm text-slate-300"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="py-8 text-center text-sm text-slate-400">
+    <div class="max-w-6xl mx-auto px-6">© 2025 Azhagirishankar K — Built with ❤️ · <a href="https://github.com/Jerry5kas" target="_blank" class="hover:text-white">GitHub</a></div>
+  </footer>
+
+  <!-- project modal -->
+  <div id="modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+    <div class="bg-[#071029] p-6 rounded-xl max-w-xl w-full">
+      <h3 id="modalTitle" class="text-xl font-semibold"></h3>
+      <p id="modalBody" class="mt-3 text-slate-300"></p>
+      <div class="mt-4 text-right">
+        <button onclick="closeModal()" class="px-4 py-2 rounded-md bg-white/5">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:800, easing:'ease-out-cubic', once:true});
+
+    // typed
+    new Typed('#typed', {strings:['Laravel • PHP • MySQL','Tailwind • React • Firebase','APIs • Payments • Git'], typeSpeed:40, backSpeed:25, loop:true});
+
+    // menu (mobile)
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn?.addEventListener('click', ()=> alert('Use the nav links to navigate. For mobile menu customization, edit the header in HTML.'));
+
+    // project modal
+    function openProjectModal(title, body){
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalBody').innerText = body;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+    function closeModal(){ document.getElementById('modal').classList.add('hidden'); }
+
+    // simple contact form handler
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formStatus').innerText = 'Thanks — message sent (demo).';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
