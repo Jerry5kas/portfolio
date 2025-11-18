@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="https://schema.org/BlogPosting">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laravel Performance Optimization: Complete Guide 2025 | Azhagirishankar K</title>
+  <meta name="description" content="Learn advanced Laravel performance optimization techniques to reduce load times by 40%. Database query optimization, caching strategies, and code refactoring best practices.">
+  <meta name="keywords" content="Laravel Performance, Laravel Optimization, PHP Performance, Database Optimization, Laravel Caching, Query Optimization, Laravel Best Practices">
+  <meta name="author" content="Azhagirishankar K">
+  <meta name="robots" content="index, follow">
+  <meta name="article:published_time" content="2025-01-15T00:00:00+00:00">
+  <meta name="article:author" content="Azhagirishankar K">
+  <link rel="canonical" href="https://jerry5kas.github.io/portfolio/blog/laravel-performance-optimization-guide.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jerry5kas.github.io/portfolio/blog/laravel-performance-optimization-guide.html">
+  <meta property="og:title" content="Laravel Performance Optimization: Complete Guide 2025">
+  <meta property="og:description" content="Learn advanced Laravel performance optimization techniques to reduce load times by 40%.">
+  <meta property="og:image" content="https://jerry5kas.github.io/portfolio/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Laravel Performance Optimization: Complete Guide 2025">
+  <meta name="twitter:description" content="Learn advanced Laravel performance optimization techniques to reduce load times by 40%.">
+  <meta name="twitter:image" content="https://jerry5kas.github.io/portfolio/og-image.jpg">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Laravel Performance Optimization: Complete Guide 2025",
+    "description": "Learn advanced Laravel performance optimization techniques to reduce load times by 40%. Database query optimization, caching strategies, and code refactoring best practices.",
+    "image": "https://jerry5kas.github.io/portfolio/og-image.jpg",
+    "datePublished": "2025-01-15T00:00:00+00:00",
+    "dateModified": "2025-01-15T00:00:00+00:00",
+    "author": {
+      "@type": "Person",
+      "name": "Azhagirishankar K",
+      "url": "https://jerry5kas.github.io/portfolio/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Azhagirishankar K"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://jerry5kas.github.io/portfolio/blog/laravel-performance-optimization-guide.html"
+    }
+  }
+  </script>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230ea5e9;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%237c3aed;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ef4444;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-family='Inter, system-ui, sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0ea5e9">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+            'display': ['Poppins', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --glass: rgba(255,255,255,0.06);
+      --primary: #0ea5e9;
+      --bg-dark: #0b1220;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0b1220;
+      color: #f1f5f9;
+    }
+    .frost {
+      background: linear-gradient(135deg, var(--glass), rgba(255,255,255,0.01));
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .prose {
+      max-width: none;
+    }
+    .prose h2 {
+      color: #f1f5f9;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .prose p {
+      color: #cbd5e1;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .prose code {
+      background: rgba(255,255,255,0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875em;
+    }
+    .prose pre {
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .prose pre code {
+      background: transparent;
+      padding: 0;
+    }
+    .prose ul, .prose ol {
+      color: #cbd5e1;
+      margin: 1.25rem 0;
+      padding-left: 1.5rem;
+    }
+    .prose li {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body class="bg-[#0b1220] text-slate-200">
+  <!-- Navigation -->
+  <header class="fixed w-full z-50 top-0 left-0 backdrop-blur-md bg-black/20 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <a href="../index.html" class="flex items-center space-x-3">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+              AK
+            </div>
+            <div class="hidden sm:block">
+              <h1 class="text-lg font-bold text-white font-display">Azhagirishankar K</h1>
+            </div>
+          </a>
+        </div>
+        <nav class="hidden lg:flex items-center space-x-4">
+          <a href="../index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</a>
+          <a href="../blog.html" class="px-4 py-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors">Blog</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <article class="pt-32 pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 text-sm text-slate-400">
+        <a href="../index.html" class="hover:text-cyan-400">Home</a>
+        <span class="mx-2">/</span>
+        <a href="../blog.html" class="hover:text-cyan-400">Blog</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-300">Laravel Performance Optimization</span>
+      </nav>
+
+      <!-- Article Meta -->
+      <div class="mb-8">
+        <div class="flex items-center space-x-4 mb-4">
+          <span class="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Laravel</span>
+          <span class="text-slate-400 text-sm">January 15, 2025</span>
+          <span class="text-slate-400 text-sm">10 min read</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
+          Laravel Performance Optimization: Complete Guide 2025
+        </h1>
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold">
+              AK
+            </div>
+            <div>
+              <p class="text-white font-medium">Azhagirishankar K</p>
+              <p class="text-slate-400 text-sm">Full Stack Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Image -->
+      <div class="mb-12 rounded-2xl overflow-hidden">
+        <div class="h-64 md:h-96 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
+          <i class="fas fa-rocket text-8xl text-white opacity-30"></i>
+        </div>
+      </div>
+
+      <!-- Article Content -->
+      <div class="prose prose-invert max-w-none">
+        <p class="text-xl text-slate-300 leading-relaxed mb-8">
+          Performance optimization is crucial for Laravel applications, especially as they scale. In this comprehensive guide, I'll share proven techniques that helped me reduce application load times by <strong class="text-cyan-400">40%</strong> and improve user engagement by <strong class="text-cyan-400">30%</strong> in production applications.
+        </p>
+
+        <h2>1. Database Query Optimization</h2>
+        <p>
+          Database queries are often the biggest performance bottleneck in Laravel applications. Here are essential optimization strategies:
+        </p>
+
+        <h3>Eager Loading Relationships</h3>
+        <p>
+          Avoid the N+1 query problem by using eager loading. Instead of loading relationships in loops, load them upfront:
+        </p>
+        <pre><code class="language-php">// ❌ Bad: N+1 queries
+$users = User::all();
+foreach ($users as $user) {
+    echo $user->posts->count(); // Query executed for each user
+}
+
+// ✅ Good: Eager loading
+$users = User::with('posts')->get();
+foreach ($users as $user) {
+    echo $user->posts->count(); // No additional queries
+}</code></pre>
+
+        <h3>Database Indexing</h3>
+        <p>
+          Proper indexing can dramatically improve query performance. Add indexes to frequently queried columns:
+        </p>
+        <pre><code class="language-php">Schema::table('users', function (Blueprint $table) {
+    $table->index('email');
+    $table->index('created_at');
+    $table->index(['status', 'created_at']); // Composite index
+});</code></pre>
+
+        <h3>Query Optimization</h3>
+        <p>
+          Use select() to fetch only required columns, avoid SELECT *:
+        </p>
+        <pre><code class="language-php">// ❌ Bad: Fetches all columns
+$users = User::all();
+
+// ✅ Good: Fetches only needed columns
+$users = User::select('id', 'name', 'email')->get();</code></pre>
+
+        <h2>2. Caching Strategies</h2>
+        <p>
+          Implementing proper caching can reduce database load and improve response times significantly.
+        </p>
+
+        <h3>Route Caching</h3>
+        <pre><code class="language-bash">php artisan route:cache</code></pre>
+
+        <h3>Config Caching</h3>
+        <pre><code class="language-bash">php artisan config:cache</code></pre>
+
+        <h3>View Caching</h3>
+        <pre><code class="language-bash">php artisan view:cache</code></pre>
+
+        <h3>Application-Level Caching</h3>
+        <pre><code class="language-php">// Cache expensive operations
+$users = Cache::remember('active_users', 3600, function () {
+    return User::where('active', true)->get();
+});
+
+// Cache query results
+$posts = Post::where('published', true)
+    ->remember(3600)
+    ->get();</code></pre>
+
+        <h2>3. Code Optimization</h2>
+        <p>
+          Refactoring code for better performance is essential for maintainability and speed.
+        </p>
+
+        <h3>Use Collections Efficiently</h3>
+        <pre><code class="language-php">// ✅ Use collection methods instead of loops
+$activeUsers = $users->filter(function ($user) {
+    return $user->isActive();
+})->map(function ($user) {
+    return $user->name;
+});</code></pre>
+
+        <h3>Lazy Collections for Large Datasets</h3>
+        <pre><code class="language-php">// Process large datasets without loading everything into memory
+User::cursor()->each(function ($user) {
+    // Process each user
+});</code></pre>
+
+        <h2>4. Asset Optimization</h2>
+        <p>
+          Optimize frontend assets to reduce page load times:
+        </p>
+        <ul>
+          <li>Minify CSS and JavaScript files</li>
+          <li>Use Laravel Mix or Vite for asset compilation</li>
+          <li>Enable gzip compression on the server</li>
+          <li>Use CDN for static assets</li>
+          <li>Implement lazy loading for images</li>
+        </ul>
+
+        <h2>5. Queue and Job Optimization</h2>
+        <p>
+          Move time-consuming tasks to background jobs:
+        </p>
+        <pre><code class="language-php">// Dispatch heavy operations to queues
+ProcessOrder::dispatch($order)->onQueue('high-priority');
+
+// Use database queues for better performance
+php artisan queue:work --queue=high-priority,default</code></pre>
+
+        <h2>6. Monitoring and Profiling</h2>
+        <p>
+          Use Laravel Debugbar and monitoring tools to identify bottlenecks:
+        </p>
+        <ul>
+          <li>Install Laravel Debugbar for development</li>
+          <li>Use Laravel Telescope for production monitoring</li>
+          <li>Monitor database query times</li>
+          <li>Track memory usage and response times</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>
+          Performance optimization is an ongoing process. By implementing these techniques, I've successfully reduced application load times by 40% and improved overall user experience. Remember to:
+        </p>
+        <ul>
+          <li>Profile your application regularly</li>
+          <li>Monitor database queries</li>
+          <li>Implement caching strategically</li>
+          <li>Optimize code continuously</li>
+          <li>Use queues for heavy operations</li>
+        </ul>
+
+        <p class="mt-8 p-6 bg-cyan-500/10 border border-cyan-500/20 rounded-lg">
+          <strong class="text-cyan-400">Pro Tip:</strong> Always test performance improvements in a staging environment before deploying to production. Use tools like Apache Bench or Laravel Telescope to measure the impact of your optimizations.
+        </p>
+      </div>
+
+      <!-- Author Bio -->
+      <div class="mt-12 frost p-8 rounded-2xl">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl">
+            AK
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white">Azhagirishankar K</h3>
+            <p class="text-cyan-400">Full Stack Laravel/PHP Developer</p>
+          </div>
+        </div>
+        <p class="text-slate-300">
+          Results-driven Full Stack Developer with 2+ years of experience optimizing Laravel applications. Specialized in performance optimization, database architecture, and scalable web solutions.
+        </p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://github.com/Jerry5kas" target="_blank" class="text-slate-400 hover:text-cyan-400">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/azhagiri-shankar" target="_blank" class="text-slate-400 hover:text-cyan-400">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Posts -->
+      <div class="mt-12">
+        <h3 class="text-2xl font-bold text-white mb-6">Related Articles</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="mysql-query-optimization-tips.html" class="frost p-6 rounded-xl hover:scale-105 transition-all">
+            <h4 class="text-lg font-bold text-white mb-2">MySQL Query Optimization: 15 Essential Tips</h4>
+            <p class="text-slate-400 text-sm">Boost database performance with indexing strategies...</p>
+          </a>
+          <a href="caching-strategies-laravel-redis.html" class="frost p-6 rounded-xl hover:scale-105 transition-all">
+            <h4 class="text-lg font-bold text-white mb-2">Caching Strategies in Laravel with Redis</h4>
+            <p class="text-slate-400 text-sm">Implement advanced caching strategies using Redis...</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to Blog -->
+      <div class="mt-12 text-center">
+        <a href="../blog.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Blog</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-b from-slate-900/30 to-black border-t border-white/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-slate-400 text-sm">© 2025 Azhagirishankar K. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+

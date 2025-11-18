@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="https://schema.org/BlogPosting">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Git & GitHub Best Practices for Developers | Azhagirishankar K</title>
+  <meta name="description" content="Master Git workflows, branching strategies, and GitHub collaboration. Learn professional version control practices, commit message conventions, and team collaboration techniques.">
+  <meta name="keywords" content="Git Best Practices, GitHub Workflow, Version Control, Git Branching, Git Commits, GitHub Collaboration, Software Development, Git Tutorial">
+  <meta name="author" content="Azhagirishankar K">
+  <meta name="robots" content="index, follow">
+  <meta name="article:published_time" content="2024-12-01T00:00:00+00:00">
+  <meta name="article:author" content="Azhagirishankar K">
+  <link rel="canonical" href="https://jerry5kas.github.io/portfolio/blog/git-github-best-practices-developers.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jerry5kas.github.io/portfolio/blog/git-github-best-practices-developers.html">
+  <meta property="og:title" content="Git & GitHub Best Practices for Developers">
+  <meta property="og:description" content="Master Git workflows, branching strategies, and GitHub collaboration. Learn professional version control practices.">
+  <meta property="og:image" content="https://jerry5kas.github.io/portfolio/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Git & GitHub Best Practices for Developers">
+  <meta name="twitter:description" content="Master Git workflows, branching strategies, and GitHub collaboration. Learn professional version control practices.">
+  <meta name="twitter:image" content="https://jerry5kas.github.io/portfolio/og-image.jpg">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Git & GitHub Best Practices for Developers",
+    "description": "Master Git workflows, branching strategies, and GitHub collaboration. Learn professional version control practices, commit message conventions, and team collaboration techniques.",
+    "image": "https://jerry5kas.github.io/portfolio/og-image.jpg",
+    "datePublished": "2024-12-01T00:00:00+00:00",
+    "dateModified": "2024-12-01T00:00:00+00:00",
+    "author": {
+      "@type": "Person",
+      "name": "Azhagirishankar K",
+      "url": "https://jerry5kas.github.io/portfolio/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Azhagirishankar K"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://jerry5kas.github.io/portfolio/blog/git-github-best-practices-developers.html"
+    }
+  }
+  </script>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230ea5e9;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%237c3aed;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ef4444;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-family='Inter, system-ui, sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0ea5e9">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+            'display': ['Poppins', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --glass: rgba(255,255,255,0.06);
+      --primary: #0ea5e9;
+      --bg-dark: #0b1220;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0b1220;
+      color: #f1f5f9;
+    }
+    .frost {
+      background: linear-gradient(135deg, var(--glass), rgba(255,255,255,0.01));
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .prose {
+      max-width: none;
+    }
+    .prose h2 {
+      color: #f1f5f9;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .prose p {
+      color: #cbd5e1;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .prose code {
+      background: rgba(255,255,255,0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875em;
+    }
+    .prose pre {
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .prose pre code {
+      background: transparent;
+      padding: 0;
+    }
+    .prose ul, .prose ol {
+      color: #cbd5e1;
+      margin: 1.25rem 0;
+      padding-left: 1.5rem;
+    }
+    .prose li {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body class="bg-[#0b1220] text-slate-200">
+  <!-- Navigation -->
+  <header class="fixed w-full z-50 top-0 left-0 backdrop-blur-md bg-black/20 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <a href="../index.html" class="flex items-center space-x-3">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+              AK
+            </div>
+            <div class="hidden sm:block">
+              <h1 class="text-lg font-bold text-white font-display">Azhagirishankar K</h1>
+            </div>
+          </a>
+        </div>
+        <nav class="hidden lg:flex items-center space-x-4">
+          <a href="../index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</a>
+          <a href="../blog.html" class="px-4 py-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors">Blog</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <article class="pt-32 pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 text-sm text-slate-400">
+        <a href="../index.html" class="hover:text-cyan-400">Home</a>
+        <span class="mx-2">/</span>
+        <a href="../blog.html" class="hover:text-cyan-400">Blog</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-300">Git & GitHub Best Practices</span>
+      </nav>
+
+      <!-- Article Meta -->
+      <div class="mb-8">
+        <div class="flex items-center space-x-4 mb-4">
+          <span class="px-3 py-1 bg-gray-500/20 text-gray-400 text-sm rounded-full">Git</span>
+          <span class="text-slate-400 text-sm">December 1, 2024</span>
+          <span class="text-slate-400 text-sm">12 min read</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
+          Git & GitHub Best Practices for Developers
+        </h1>
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold">
+              AK
+            </div>
+            <div>
+              <p class="text-white font-medium">Azhagirishankar K</p>
+              <p class="text-slate-400 text-sm">Full Stack Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Image -->
+      <div class="mb-12 rounded-2xl overflow-hidden">
+        <div class="h-64 md:h-96 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+          <i class="fab fa-github text-8xl text-white opacity-30"></i>
+        </div>
+      </div>
+
+      <!-- Article Content -->
+      <div class="prose prose-invert max-w-none">
+        <p class="text-xl text-slate-300 leading-relaxed mb-8">
+          Version control is the backbone of modern software development. Mastering Git and GitHub workflows is essential for any developer working in a team or maintaining professional codebases. In this comprehensive guide, I'll share best practices that have helped me collaborate effectively on <strong class="text-cyan-400">20+ projects</strong> and maintain clean, organized repositories.
+        </p>
+
+        <h2>1. Commit Message Best Practices</h2>
+        <p>
+          Clear, descriptive commit messages are crucial for understanding project history. Follow these conventions:
+        </p>
+
+        <h3>Conventional Commit Format</h3>
+        <p>
+          Use a consistent format that includes type, scope, and description:
+        </p>
+        <pre><code class="language-bash"># Format: &lt;type&gt;(&lt;scope&gt;): &lt;description&gt;
+
+# Examples:
+feat(auth): add user authentication with JWT
+fix(api): resolve 500 error on user registration
+docs(readme): update installation instructions
+refactor(database): optimize user queries
+test(api): add unit tests for payment module
+chore(deps): update Laravel to version 10</code></pre>
+
+        <h3>Commit Message Types</h3>
+        <ul>
+          <li><strong class="text-cyan-400">feat</strong>: New feature</li>
+          <li><strong class="text-cyan-400">fix</strong>: Bug fix</li>
+          <li><strong class="text-cyan-400">docs</strong>: Documentation changes</li>
+          <li><strong class="text-cyan-400">style</strong>: Code style changes (formatting)</li>
+          <li><strong class="text-cyan-400">refactor</strong>: Code refactoring</li>
+          <li><strong class="text-cyan-400">test</strong>: Adding or updating tests</li>
+          <li><strong class="text-cyan-400">chore</strong>: Maintenance tasks</li>
+        </ul>
+
+        <h2>2. Branching Strategies</h2>
+        <p>
+          A well-defined branching strategy ensures smooth collaboration and code quality:
+        </p>
+
+        <h3>Git Flow Model</h3>
+        <p>
+          Use a structured branching model for organized development:
+        </p>
+        <pre><code class="language-bash"># Main branches
+main/master     # Production-ready code
+develop         # Integration branch for features
+
+# Supporting branches
+feature/*       # New features
+bugfix/*        # Bug fixes
+hotfix/*        # Urgent production fixes
+release/*       # Release preparation</code></pre>
+
+        <h3>Branch Naming Conventions</h3>
+        <pre><code class="language-bash"># Feature branches
+feature/user-authentication
+feature/payment-integration
+
+# Bug fix branches
+bugfix/login-error
+bugfix/memory-leak
+
+# Hotfix branches
+hotfix/security-patch
+hotfix/critical-bug</code></pre>
+
+        <h2>3. Pull Request Best Practices</h2>
+        <p>
+          Effective pull requests facilitate code review and collaboration:
+        </p>
+
+        <h3>PR Title and Description</h3>
+        <ul>
+          <li>Use clear, descriptive titles</li>
+          <li>Include context and motivation</li>
+          <li>List changes and breaking changes</li>
+          <li>Add screenshots for UI changes</li>
+          <li>Reference related issues</li>
+        </ul>
+
+        <h3>PR Size Guidelines</h3>
+        <ul>
+          <li>Keep PRs focused and small (200-400 lines ideal)</li>
+          <li>One feature or fix per PR</li>
+          <li>Break large features into smaller PRs</li>
+        </ul>
+
+        <h2>4. Git Workflow Commands</h2>
+        <p>
+          Essential Git commands for daily development:
+        </p>
+
+        <h3>Starting Work</h3>
+        <pre><code class="language-bash"># Update main branch
+git checkout main
+git pull origin main
+
+# Create feature branch
+git checkout -b feature/new-feature
+
+# Or from develop
+git checkout develop
+git pull origin develop
+git checkout -b feature/new-feature</code></pre>
+
+        <h3>Making Changes</h3>
+        <pre><code class="language-bash"># Stage specific files
+git add path/to/file.php
+
+# Stage all changes
+git add .
+
+# Commit with message
+git commit -m "feat(auth): add login functionality"
+
+# Push to remote
+git push origin feature/new-feature</code></pre>
+
+        <h3>Keeping Branch Updated</h3>
+        <pre><code class="language-bash"># Fetch latest changes
+git fetch origin
+
+# Rebase on main (cleaner history)
+git rebase origin/main
+
+# Or merge main into branch
+git merge origin/main</code></pre>
+
+        <h2>5. .gitignore Best Practices</h2>
+        <p>
+          Proper .gitignore files prevent committing sensitive or unnecessary files:
+        </p>
+
+        <h3>Laravel .gitignore Example</h3>
+        <pre><code class="language-bash"># Dependencies
+/vendor
+/node_modules
+
+# Environment files
+.env
+.env.backup
+.env.production
+
+# IDE files
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+storage/logs/*
+
+# Compiled files
+/public/hot
+/public/storage
+/storage/*.key</code></pre>
+
+        <h2>6. GitHub Collaboration Features</h2>
+        <p>
+          Leverage GitHub features for better team collaboration:
+        </p>
+
+        <h3>Issues and Project Management</h3>
+        <ul>
+          <li>Use GitHub Issues for bug tracking</li>
+          <li>Link PRs to issues using keywords (fixes #123)</li>
+          <li>Use labels for categorization</li>
+          <li>Create project boards for task management</li>
+        </ul>
+
+        <h3>Code Review Process</h3>
+        <ul>
+          <li>Request reviews from team members</li>
+          <li>Address all review comments</li>
+          <li>Use "Request Changes" appropriately</li>
+          <li>Approve only when code is ready</li>
+        </ul>
+
+        <h2>7. Security Best Practices</h2>
+        <p>
+          Protect sensitive information and maintain repository security:
+        </p>
+
+        <h3>Never Commit Secrets</h3>
+        <pre><code class="language-bash"># ❌ Never commit these:
+API keys
+Passwords
+Database credentials
+Private keys
+.env files
+
+# ✅ Use environment variables
+# Store in .env (gitignored)
+# Use GitHub Secrets for CI/CD</code></pre>
+
+        <h3>Branch Protection Rules</h3>
+        <ul>
+          <li>Require pull request reviews</li>
+          <li>Require status checks to pass</li>
+          <li>Require branches to be up to date</li>
+          <li>Restrict force pushes</li>
+        </ul>
+
+        <h2>8. Advanced Git Techniques</h2>
+        <p>
+          Power user techniques for complex scenarios:
+        </p>
+
+        <h3>Interactive Rebase</h3>
+        <pre><code class="language-bash"># Clean up commit history
+git rebase -i HEAD~3
+
+# Options:
+# pick - use commit
+# squash - combine with previous
+# edit - modify commit
+# drop - remove commit</code></pre>
+
+        <h3>Stashing Changes</h3>
+        <pre><code class="language-bash"># Save uncommitted changes
+git stash
+
+# List stashes
+git stash list
+
+# Apply stash
+git stash apply
+
+# Apply and remove
+git stash pop</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>
+          Mastering Git and GitHub best practices is essential for professional software development. By following these guidelines, you'll maintain clean repositories, facilitate smooth collaboration, and improve code quality. Remember:
+        </p>
+        <ul>
+          <li>Write clear, descriptive commit messages</li>
+          <li>Follow a consistent branching strategy</li>
+          <li>Keep pull requests focused and well-documented</li>
+          <li>Never commit sensitive information</li>
+          <li>Use GitHub features for effective collaboration</li>
+        </ul>
+        <p>
+          These practices have helped me maintain <strong class="text-cyan-400">20+ production projects</strong> with clean histories and efficient team workflows. Start implementing these practices today to elevate your version control game!
+        </p>
+      </div>
+
+      <!-- Author Bio -->
+      <div class="mt-12 frost p-8 rounded-2xl">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl">
+            AK
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white">Azhagirishankar K</h3>
+            <p class="text-cyan-400">Full Stack Laravel/PHP Developer</p>
+          </div>
+        </div>
+        <p class="text-slate-300">
+          Results-driven Full Stack Developer with 2+ years of experience in version control, collaborative development, and maintaining clean codebases. Specialized in Laravel, PHP, and modern web development practices.
+        </p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://github.com/Jerry5kas" target="_blank" class="text-slate-400 hover:text-cyan-400">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/azhagiri-shankar" target="_blank" class="text-slate-400 hover:text-cyan-400">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Posts -->
+      <div class="mt-12">
+        <h3 class="text-2xl font-bold text-white mb-6">Related Articles</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="laravel-performance-optimization-guide.html" class="frost p-6 rounded-xl hover:scale-105 transition-all">
+            <h4 class="text-lg font-bold text-white mb-2">Laravel Performance Optimization Guide</h4>
+            <p class="text-slate-400 text-sm">Learn advanced techniques to optimize Laravel applications...</p>
+          </a>
+          <a href="rest-api-best-practices-laravel.html" class="frost p-6 rounded-xl hover:scale-105 transition-all">
+            <h4 class="text-lg font-bold text-white mb-2">REST API Best Practices in Laravel</h4>
+            <p class="text-slate-400 text-sm">Build scalable and maintainable REST APIs...</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to Blog -->
+      <div class="mt-12 text-center">
+        <a href="../blog.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Blog</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-b from-slate-900/30 to-black border-t border-white/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-slate-400 text-sm">© 2025 Azhagirishankar K. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+

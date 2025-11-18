@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="https://schema.org/BlogPosting">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SSL & DNS Configuration Guide: Secure Website Setup 2025</title>
+  <meta name="description" content="Complete guide to SSL certificate installation and DNS configuration. Learn how to secure your website with HTTPS, configure DNS records, and set up SSL on Hostinger, GCP, and other hosting platforms.">
+  <meta name="keywords" content="SSL Certificate, DNS Configuration, HTTPS Setup, SSL Installation, DNS Records, Website Security, SSL/TLS, Domain Configuration">
+  <meta name="author" content="Azhagirishankar K">
+  <meta name="robots" content="index, follow">
+  <meta name="article:published_time" content="2024-11-22T00:00:00+00:00">
+  <link rel="canonical" href="https://jerry5kas.github.io/portfolio/blog/ssl-dns-configuration-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jerry5kas.github.io/portfolio/blog/ssl-dns-configuration-guide.html">
+  <meta property="og:title" content="SSL & DNS Configuration Guide: Secure Website Setup">
+  <meta property="og:description" content="Complete guide to SSL certificate installation and DNS configuration. Learn how to secure your website with HTTPS.">
+  <meta property="og:image" content="https://jerry5kas.github.io/portfolio/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "SSL & DNS Configuration Guide: Secure Website Setup 2025",
+    "description": "Complete guide to SSL certificate installation and DNS configuration.",
+    "image": "https://jerry5kas.github.io/portfolio/og-image.jpg",
+    "datePublished": "2024-11-22T00:00:00+00:00",
+    "author": {"@type": "Person", "name": "Azhagirishankar K"}
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230ea5e9;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%237c3aed;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ef4444;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-family='Inter, system-ui, sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0ea5e9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = {theme: {extend: {fontFamily: {'sans': ['Inter', 'system-ui', 'sans-serif'], 'display': ['Poppins', 'system-ui', 'sans-serif'], 'mono': ['JetBrains Mono', 'monospace']}}}}}</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>body{font-family:'Inter',system-ui,sans-serif;background:#0b1220;color:#f1f5f9}.frost{background:linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01));backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1)}.prose h2{color:#f1f5f9;font-size:1.875rem;font-weight:700;margin-top:2rem;margin-bottom:1rem}.prose p{color:#cbd5e1;line-height:1.75;margin-bottom:1.25rem}.prose code{background:rgba(255,255,255,0.1);padding:0.25rem 0.5rem;border-radius:0.25rem;font-family:'JetBrains Mono',monospace}.prose pre{background:#1e293b;padding:1.5rem;border-radius:0.5rem;overflow-x:auto;margin:1.5rem 0}.prose pre code{background:transparent;padding:0}.prose ul,.prose ol{color:#cbd5e1;margin:1.25rem 0;padding-left:1.5rem}.prose li{margin:0.5rem 0}</style>
+</head>
+<body class="bg-[#0b1220] text-slate-200">
+  <header class="fixed w-full z-50 top-0 left-0 backdrop-blur-md bg-black/20 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="../index.html" class="flex items-center space-x-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">AK</div>
+          <div class="hidden sm:block"><h1 class="text-lg font-bold text-white font-display">Azhagirishankar K</h1></div>
+        </a>
+        <nav class="hidden lg:flex items-center space-x-4">
+          <a href="../index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</a>
+          <a href="../blog.html" class="px-4 py-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors">Blog</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <article class="pt-32 pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="mb-8 text-sm text-slate-400"><a href="../index.html" class="hover:text-cyan-400">Home</a> <span class="mx-2">/</span> <a href="../blog.html" class="hover:text-cyan-400">Blog</a> <span class="mx-2">/</span> <span class="text-slate-300">SSL/DNS</span></nav>
+      <div class="mb-8">
+        <div class="flex items-center space-x-4 mb-4">
+          <span class="px-3 py-1 bg-amber-500/20 text-amber-400 text-sm rounded-full">DevOps</span>
+          <span class="text-slate-400 text-sm">November 22, 2024</span>
+          <span class="text-slate-400 text-sm">14 min read</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 font-display">SSL & DNS Configuration Guide: Secure Website Setup 2025</h1>
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold">AK</div>
+          <div><p class="text-white font-medium">Azhagirishankar K</p><p class="text-slate-400 text-sm">Full Stack Developer</p></div>
+        </div>
+      </div>
+      <div class="mb-12 rounded-2xl overflow-hidden">
+        <div class="h-64 md:h-96 bg-gradient-to-br from-amber-600 to-yellow-600 flex items-center justify-center">
+          <i class="fas fa-lock text-8xl text-white opacity-30"></i>
+        </div>
+      </div>
+      <div class="prose prose-invert max-w-none">
+        <p class="text-xl text-slate-300 leading-relaxed mb-8">SSL certificates and proper DNS configuration are essential for secure, professional websites. This guide covers everything you need to set up SSL and configure DNS correctly.</p>
+        <h2>1. DNS Configuration</h2>
+        <h3>Common DNS Records</h3>
+        <ul>
+          <li><strong>A Record:</strong> Points domain to IP address</li>
+          <li><strong>CNAME:</strong> Points domain to another domain</li>
+          <li><strong>MX Record:</strong> Email server configuration</li>
+          <li><strong>TXT Record:</strong> Verification and SPF records</li>
+        </ul>
+        <h3>Example DNS Setup</h3>
+        <pre><code>Type    Name    Value              TTL
+A       @       192.0.2.1         3600
+A       www     192.0.2.1         3600
+CNAME   mail    mail.example.com  3600
+MX      @       mail.example.com   3600</code></pre>
+        <h2>2. SSL Certificate Types</h2>
+        <ul>
+          <li><strong>Domain Validated (DV):</strong> Basic validation</li>
+          <li><strong>Organization Validated (OV):</strong> Business verification</li>
+          <li><strong>Extended Validation (EV):</strong> Highest level</li>
+          <li><strong>Wildcard:</strong> Covers subdomains</li>
+        </ul>
+        <h2>3. SSL Installation on Hostinger</h2>
+        <ol>
+          <li>Log in to Hostinger control panel</li>
+          <li>Navigate to SSL section</li>
+          <li>Select "Let's Encrypt" or purchase SSL</li>
+          <li>Install certificate</li>
+          <li>Force HTTPS redirect</li>
+        </ol>
+        <h2>4. SSL Installation on GCP</h2>
+        <pre><code># Using Google Cloud Console
+1. Go to Cloud Load Balancing
+2. Create SSL certificate
+3. Attach to load balancer
+4. Configure HTTPS redirect</code></pre>
+        <h2>5. Force HTTPS in Laravel</h2>
+        <pre><code>// In AppServiceProvider
+public function boot()
+{
+    if (env('APP_ENV') === 'production') {
+        URL::forceScheme('https');
+    }
+}
+
+// In .htaccess (Apache)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</code></pre>
+        <h2>6. DNS Propagation</h2>
+        <ul>
+          <li>DNS changes can take 24-48 hours</li>
+          <li>Use DNS checker tools to verify</li>
+          <li>Lower TTL before making changes</li>
+          <li>Clear DNS cache if needed</li>
+        </ul>
+        <h2>7. SSL Best Practices</h2>
+        <ul>
+          <li>Use strong encryption (TLS 1.2+)</li>
+          <li>Enable HSTS headers</li>
+          <li>Keep certificates updated</li>
+          <li>Monitor certificate expiration</li>
+          <li>Use certificate monitoring tools</li>
+        </ul>
+        <h2>Conclusion</h2>
+        <p>Proper SSL and DNS configuration ensures your website is secure and accessible. Follow these guidelines to set up and maintain secure website infrastructure.</p>
+      </div>
+      <div class="mt-12 frost p-8 rounded-2xl">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl">AK</div>
+          <div><h3 class="text-xl font-bold text-white">Azhagirishankar K</h3><p class="text-cyan-400">Full Stack Laravel/PHP Developer</p></div>
+        </div>
+        <p class="text-slate-300">Full Stack Developer with experience configuring SSL certificates and DNS for production applications.</p>
+      </div>
+      <div class="mt-12 text-center">
+        <a href="../blog.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all">
+          <i class="fas fa-arrow-left"></i><span>Back to Blog</span>
+        </a>
+      </div>
+    </div>
+  </article>
+  <footer class="bg-gradient-to-b from-slate-900/30 to-black border-t border-white/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-slate-400 text-sm">© 2025 Azhagirishankar K. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
