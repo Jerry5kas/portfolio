@@ -4,7 +4,8 @@ A modern, responsive portfolio website showcasing my work as a Full Stack Develo
 
 ## 🚀 Live Demo
 
-Visit the live portfolio: [https://jerry5kas.github.io/MyPortfolio/](https://jerry5kas.github.io/MyPortfolio/)
+Visit the live portfolio: [https://jerry5kas.github.io/portfolio/](https://jerry5kas.github.io/portfolio/)  
+Custom domain: [https://jerry5kas.techbuds.online](https://jerry5kas.techbuds.online)
 
 ## ✨ Features
 

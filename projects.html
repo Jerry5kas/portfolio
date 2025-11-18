@@ -1,0 +1,810 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Projects - Azhagirishankar K Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230ea5e9;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%237c3aed;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ef4444;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-family='Inter, system-ui, sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230ea5e9;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%237c3aed;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ef4444;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-family='Inter, system-ui, sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+  <link rel="manifest" href="data:application/json,%7B%22name%22:%22Azhagirishankar%20K%20Portfolio%22,%22short_name%22:%22AK%20Portfolio%22,%22icons%22:%5B%7B%22src%22:%22data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230ea5e9;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%237c3aed;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ef4444;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='192' height='192' rx='40' fill='url(%23grad)'/%3E%3Ctext x='96' y='125' font-family='Inter, system-ui, sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E%22,%22sizes%22:%22192x192%22,%22type%22:%22image/svg+xml%22%7D%5D,%22theme_color%22:%22%230ea5e9%22,%22background_color%22:%22%230b1220%22%7D">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+            'display': ['Poppins', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+          fontSize: {
+            'xs': ['0.75rem', { lineHeight: '1rem' }],
+            'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+            'base': ['1rem', { lineHeight: '1.5rem' }],
+            'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+            'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+            '2xl': ['1.5rem', { lineHeight: '2rem' }],
+            '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+            '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+            '5xl': ['3rem', { lineHeight: '1' }],
+            '6xl': ['3.75rem', { lineHeight: '1' }],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Custom CSS Variables */
+    :root {
+      --glass: rgba(255,255,255,0.06);
+      --glass-dark: rgba(0,0,0,0.06);
+      --primary: #0ea5e9;
+      --secondary: #7c3aed;
+      --accent: #ef4444;
+      --bg-dark: #0b1220;
+      --bg-light: #ffffff;
+      --text-dark: #f1f5f9;
+      --text-light: #1e293b;
+    }
+
+    /* Typography System */
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-feature-settings: 'cv11', 'ss01';
+      font-variant-numeric: lining-nums;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-display {
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+      font-feature-settings: 'liga' 1, 'calt' 1;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    /* Enhanced Glass Effect */
+    .frost {
+      background: linear-gradient(135deg, var(--glass-bg), rgba(255,255,255,0.01));
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: var(--bg-dark);
+      --bg-secondary: #1e293b;
+      --text-primary: var(--text-dark);
+      --text-secondary: #94a3b8;
+      --glass-bg: var(--glass);
+    }
+
+    [data-theme="dark"] body {
+      background: #0b1220;
+      color: #f1f5f9;
+    }
+
+    /* Scroll Progress */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+      z-index: 9999;
+      transition: width 0.1s ease;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      position: relative;
+      width: 56px;
+      height: 28px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .theme-toggle-thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [data-theme="light"] .theme-toggle-thumb {
+      transform: translateX(28px);
+      background: #fbbf24;
+    }
+  </style>
+</head>
+<body class="bg-[#0b1220] text-slate-200 leading-relaxed antialiased font-sans" data-theme="dark">
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+  
+  <!-- Enhanced Navigation -->
+  <header class="fixed w-full z-50 top-0 left-0 backdrop-blur-md bg-black/20 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo Section -->
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center space-x-3">
+            <div class="relative">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                AK
+              </div>
+              <div class="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+            </div>
+            <div class="hidden sm:block">
+              <h1 class="text-lg font-bold text-white font-display">Azhagirishankar K</h1>
+              <p class="text-xs text-cyan-400 font-medium">Full Stack Developer</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a href="index.html#about" class="nav-link group relative px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-all duration-300">
+            <span class="relative z-10">About</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+          <a href="index.html#projects" class="nav-link group relative px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-all duration-300">
+            <span class="relative z-10">Projects</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+          <a href="index.html#skills" class="nav-link group relative px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-all duration-300">
+            <span class="relative z-10">Skills</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+          <a href="index.html#contact" class="nav-link group relative px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-all duration-300">
+            <span class="relative z-10">Contact</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-red-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+        </nav>
+
+        <!-- Right Side Actions -->
+        <div class="flex items-center space-x-4">
+          <!-- Theme Toggle -->
+          <button id="themeToggle" class="relative w-14 h-7 bg-slate-700 rounded-full transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+            <div class="theme-toggle-thumb absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow-lg transition-transform duration-300 flex items-center justify-center">
+              <i class="fas fa-moon text-slate-700 text-xs"></i>
+            </div>
+          </button>
+
+          <!-- Resume Button -->
+          <a href="AzhagirishankarK_Resume.pdf" download class="hidden sm:flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <i class="fas fa-download text-sm"></i>
+            <span>Resume</span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-black/40 backdrop-blur-md">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="index.html#about" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">About</a>
+          <a href="index.html#projects" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Projects</a>
+          <a href="index.html#skills" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Skills</a>
+          <a href="index.html#contact" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Contact</a>
+          <a href="AzhagirishankarK_Resume.pdf" download class="flex items-center space-x-2 px-3 py-2 text-base font-medium text-cyan-400 hover:text-cyan-300 transition-colors">
+            <i class="fas fa-download"></i>
+            <span>Download Resume</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-b from-slate-900/20 to-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-white mb-4 font-display">
+          All <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">Projects</span>
+        </h2>
+        <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+          A comprehensive showcase of my work and innovative solutions that drive business growth
+        </p>
+        <a href="index.html" class="inline-flex items-center space-x-2 mt-6 text-cyan-400 hover:text-cyan-300 transition-colors">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+      <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <!-- Project 1: Account Billing System -->
+        <article class="group relative overflow-hidden rounded-2xl frost hover:scale-105 transition-all duration-500" data-aos="fade-up">
+          <div class="relative h-48 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-file-invoice-dollar text-4xl text-white mb-2"></i>
+                <h3 class="text-2xl font-bold text-white">Account Billing System</h3>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full">Live</span>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xl font-bold text-white">Billing & Inventory Management</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-xs text-red-400 bg-red-400/10 px-2 py-1 rounded">Laravel</span>
+                <span class="font-mono text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded">Livewire</span>
+                <span class="font-mono text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded">MySQL</span>
+              </div>
+            </div>
+            
+            <p class="text-slate-300 mb-4 leading-relaxed text-sm">
+              Full-fledged Account Billing & Inventory Management System built for SMEs with sales & purchase management, inventory ledger, payables & receivables, and GST-compliant billing.
+            </p>
+            
+            <div class="mb-4">
+              <h5 class="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h5>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>• Sales & Purchase Management</li>
+                <li>• Inventory Ledger (Stock In/Out)</li>
+                <li>• Payables & Receivables</li>
+                <li>• GST-Compliant Billing & E-Way Bill</li>
+                <li>• Real-time dashboards using Livewire</li>
+              </ul>
+            </div>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex space-x-2">
+                <a href="https://my.aaran.org/dashboard" target="_blank" class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg transition-all text-sm font-medium">
+                  <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Techbuds -->
+        <article class="group relative overflow-hidden rounded-2xl frost hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-48 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-briefcase text-4xl text-white mb-2"></i>
+                <h3 class="text-2xl font-bold text-white">Techbuds</h3>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full">Live</span>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xl font-bold text-white">CRM & Project Management</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-xs text-red-400 bg-red-400/10 px-2 py-1 rounded">Laravel</span>
+                <span class="font-mono text-xs text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded">JS</span>
+                <span class="font-mono text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded">MySQL</span>
+              </div>
+            </div>
+            
+            <p class="text-slate-300 mb-4 leading-relaxed text-sm">
+              Multi-module CRM & Project Management Platform tailored for service-based businesses with Kanban-based task board and SEO-optimized blogs.
+            </p>
+            
+            <div class="mb-4">
+              <h5 class="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h5>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>• Lead & Client Management</li>
+                <li>• Kanban-based Task Board</li>
+                <li>• Project Tracking</li>
+                <li>• SEO-Optimized Blogs</li>
+                <li>• Performance Optimization + Caching</li>
+              </ul>
+            </div>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex space-x-2">
+                <a href="http://techbuds.online/" target="_blank" class="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 rounded-lg transition-all text-sm font-medium">
+                  <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Destrosolutions -->
+        <article class="group relative overflow-hidden rounded-2xl frost hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-48 bg-gradient-to-br from-cyan-500 via-blue-500 to-teal-500 overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-car text-4xl text-white mb-2"></i>
+                <h3 class="text-2xl font-bold text-white">DestroSolutions</h3>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full">Live</span>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xl font-bold text-white">SDV Portal & Website</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-xs text-red-400 bg-red-400/10 px-2 py-1 rounded">Laravel</span>
+                <span class="font-mono text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded">Livewire</span>
+                <span class="font-mono text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded">MySQL</span>
+              </div>
+            </div>
+            
+            <p class="text-slate-300 mb-4 leading-relaxed text-sm">
+              Corporate website + training portal in the Software-Defined Vehicles (SDV) domain with CMS, SEO optimization, and payment gateway integration.
+            </p>
+            
+            <div class="mb-4">
+              <h5 class="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h5>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>• CMS with Admin Panel</li>
+                <li>• On-Page SEO Optimization</li>
+                <li>• Product & Services Modules</li>
+                <li>• Training/Workshops Listing</li>
+                <li>• Integrated Payment Gateway</li>
+              </ul>
+            </div>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex space-x-2">
+                <a href="https://www.destrosolutions.com/" target="_blank" class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-teal-600 hover:from-cyan-600 hover:to-teal-700 rounded-lg transition-all text-sm font-medium">
+                  <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: JippyMart -->
+        <article class="group relative overflow-hidden rounded-2xl frost hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative h-48 bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-shopping-cart text-4xl text-white mb-2"></i>
+                <h3 class="text-2xl font-bold text-white">JippyMart</h3>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full">Live</span>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xl font-bold text-white">Food & Mart Delivery</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-xs text-red-400 bg-red-400/10 px-2 py-1 rounded">Laravel</span>
+                <span class="font-mono text-xs text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded">Firebase</span>
+                <span class="font-mono text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded">GCP</span>
+              </div>
+            </div>
+            
+            <p class="text-slate-300 mb-4 leading-relaxed text-sm">
+              Large-scale Food & Mart Delivery System with multi-panel architecture, Firebase authentication, and REST APIs for mobile apps.
+            </p>
+            
+            <div class="mb-4">
+              <h5 class="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h5>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>• Multi-role architecture (Admin, Vendor, User)</li>
+                <li>• Firebase Authentication + SMS OTP</li>
+                <li>• REST APIs for Mobile Apps (Flutter)</li>
+                <li>• Real-time restaurant data sync</li>
+                <li>• Delivery Operations Management</li>
+              </ul>
+            </div>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex space-x-2">
+                <a href="https://jippymart.in/" target="_blank" class="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 rounded-lg transition-all text-sm font-medium">
+                  <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Smart Ledger Book -->
+        <article class="group relative overflow-hidden rounded-2xl frost hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+          <div class="relative h-48 bg-gradient-to-br from-rose-500 via-pink-500 to-orange-400 overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-calculator text-4xl text-white mb-2"></i>
+                <h3 class="text-2xl font-bold text-white">Smart Ledger Book</h3>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full">200+ Users</span>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xl font-bold text-white">Digital Credit Ledger</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-xs text-red-400 bg-red-400/10 px-2 py-1 rounded">Laravel</span>
+                <span class="font-mono text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded">Livewire</span>
+                <span class="font-mono text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded">MySQL</span>
+              </div>
+            </div>
+            
+            <p class="text-slate-300 mb-4 leading-relaxed text-sm">
+              Lightweight Digital Ledger (Debit/Credit Book) for SMEs and shops with customer-wise ledger, transaction history, and balance calculations.
+            </p>
+            
+            <div class="mb-4">
+              <h5 class="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h5>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>• Customer-wise Ledger</li>
+                <li>• Transaction History</li>
+                <li>• Balance Calculations</li>
+                <li>• Secure Login with Jetstream</li>
+                <li>• Minimal, fast UI with Livewire</li>
+              </ul>
+            </div>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex space-x-2">
+                <span class="px-4 py-2 bg-white/10 rounded-lg text-sm font-medium text-slate-400">Private Project</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: ProperMentor -->
+        <article class="group relative overflow-hidden rounded-2xl frost hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="500">
+          <div class="relative h-48 bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-home text-4xl text-white mb-2"></i>
+                <h3 class="text-2xl font-bold text-white">ProperMentor</h3>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full">Live</span>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xl font-bold text-white">Real Estate Marketplace</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-xs text-red-400 bg-red-400/10 px-2 py-1 rounded">Laravel</span>
+                <span class="font-mono text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded">Bootstrap</span>
+                <span class="font-mono text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded">Razorpay</span>
+              </div>
+            </div>
+            
+            <p class="text-slate-300 mb-4 leading-relaxed text-sm">
+              Complete real estate platform to Buy/Sell/Rent properties with dynamic property listings, search & filter features, and SEO-optimized pages.
+            </p>
+            
+            <div class="mb-4">
+              <h5 class="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h5>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>• Dynamic Property Listings</li>
+                <li>• Search & Filter Features</li>
+                <li>• Lead Capture System</li>
+                <li>• SEO-Optimized Pages</li>
+                <li>• Integrated Razorpay Payment</li>
+              </ul>
+            </div>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex space-x-2">
+                <a href="https://propertymentor.co.in/" target="_blank" class="px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 rounded-lg transition-all text-sm font-medium">
+                  <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 7: Viztechy -->
+        <article class="group relative overflow-hidden rounded-2xl frost hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="600">
+          <div class="relative h-48 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-chart-line text-4xl text-white mb-2"></i>
+                <h3 class="text-2xl font-bold text-white">Viztechy</h3>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full">Live</span>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xl font-bold text-white">Digital Marketing & CRM</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-xs text-red-400 bg-red-400/10 px-2 py-1 rounded">Laravel</span>
+                <span class="font-mono text-xs text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded">JS</span>
+                <span class="font-mono text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded">MySQL</span>
+              </div>
+            </div>
+            
+            <p class="text-slate-300 mb-4 leading-relaxed text-sm">
+              Digital marketing website + internal CRM & Project Management Tool with lead generation funnel, CTA-focused landing pages, and services showcase.
+            </p>
+            
+            <div class="mb-4">
+              <h5 class="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h5>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>• Lead Generation Funnel</li>
+                <li>• CTA-Focused Landing Pages</li>
+                <li>• Services Showcase</li>
+                <li>• Custom CRM + Project Tracker</li>
+                <li>• Fully Responsive UI</li>
+              </ul>
+            </div>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex space-x-2">
+                <a href="https://viztechy.com/" target="_blank" class="px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 rounded-lg transition-all text-sm font-medium">
+                  <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 8: EduLearn -->
+        <article class="group relative overflow-hidden rounded-2xl frost hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="700">
+          <div class="relative h-48 bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-graduation-cap text-4xl text-white mb-2"></i>
+                <h3 class="text-2xl font-bold text-white">EduLearn</h3>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full">LMS</span>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xl font-bold text-white">Learning Management System</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-xs text-red-400 bg-red-400/10 px-2 py-1 rounded">Laravel</span>
+                <span class="font-mono text-xs text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded">Firebase</span>
+                <span class="font-mono text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded">Razorpay</span>
+              </div>
+            </div>
+            
+            <p class="text-slate-300 mb-4 leading-relaxed text-sm">
+              Complete Learning Management System for students & instructors with course creation & enrollment, video content delivery, and payment integration.
+            </p>
+            
+            <div class="mb-4">
+              <h5 class="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h5>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>• Admin Panel & Student Dashboard</li>
+                <li>• Course Creation & Enrollment</li>
+                <li>• Video Content Delivery</li>
+                <li>• Payment Integration (Razorpay)</li>
+                <li>• Real-time Notifications</li>
+              </ul>
+            </div>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex space-x-2">
+                <span class="px-4 py-2 bg-white/10 rounded-lg text-sm font-medium text-slate-400">Private Project</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Back to Home Button -->
+      <div class="text-center mt-16" data-aos="fade-up">
+        <a href="index.html" class="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Footer -->
+  <footer class="bg-gradient-to-b from-slate-900/30 to-black border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Brand Section -->
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+              AK
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Azhagirishankar K</h3>
+              <p class="text-cyan-400 text-sm">Full Stack Developer</p>
+            </div>
+          </div>
+          <p class="text-slate-300 leading-relaxed mb-6 max-w-md">
+            Passionate about creating innovative web solutions that drive business growth. 
+            Let's build something amazing together!
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://github.com/Jerry5kas" target="_blank" 
+               class="w-10 h-10 rounded-full bg-white/10 hover:bg-cyan-500 hover:scale-110 transition-all duration-300 flex items-center justify-center group">
+              <i class="fab fa-github text-slate-400 group-hover:text-white"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/azhagiri-shankar" target="_blank" 
+               class="w-10 h-10 rounded-full bg-white/10 hover:bg-blue-600 hover:scale-110 transition-all duration-300 flex items-center justify-center group">
+              <i class="fab fa-linkedin text-slate-400 group-hover:text-white"></i>
+            </a>
+            <a href="mailto:azhagirishankar5@gmail.com" 
+               class="w-10 h-10 rounded-full bg-white/10 hover:bg-green-500 hover:scale-110 transition-all duration-300 flex items-center justify-center group">
+              <i class="fas fa-envelope text-slate-400 group-hover:text-white"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html#about" class="text-slate-300 hover:text-cyan-400 transition-colors">About Me</a></li>
+            <li><a href="index.html#projects" class="text-slate-300 hover:text-cyan-400 transition-colors">Projects</a></li>
+            <li><a href="index.html#skills" class="text-slate-300 hover:text-cyan-400 transition-colors">Skills</a></li>
+            <li><a href="index.html#contact" class="text-slate-300 hover:text-cyan-400 transition-colors">Contact</a></li>
+            <li><a href="AzhagirishankarK_Resume.pdf" download class="text-slate-300 hover:text-cyan-400 transition-colors">Resume</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-6">Services</h4>
+          <ul class="space-y-3">
+            <li><span class="text-slate-300">Web Development</span></li>
+            <li><span class="text-slate-300">Mobile Apps</span></li>
+            <li><span class="text-slate-300">E-commerce Solutions</span></li>
+            <li><span class="text-slate-300">API Development</span></li>
+            <li><span class="text-slate-300">Consulting</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="text-slate-400 text-sm mb-4 md:mb-0">
+            © 2025 Azhagirishankar K. All rights reserved.
+          </div>
+          <div class="flex items-center space-x-6 text-sm text-slate-400">
+            <span>Built with <i class="fas fa-heart text-red-500 mx-1"></i> using</span>
+            <span class="px-2 py-1 bg-white/10 rounded text-xs">HTML5</span>
+            <span class="px-2 py-1 bg-white/10 rounded text-xs">Tailwind CSS</span>
+            <span class="px-2 py-1 bg-white/10 rounded text-xs">JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100
+    });
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+
+    function setTheme(theme) {
+      body.setAttribute('data-theme', theme);
+      const thumb = themeToggle.querySelector('.theme-toggle-thumb');
+      const icon = thumb.querySelector('i');
+      
+      if (theme === 'dark') {
+        icon.className = 'fas fa-moon text-slate-700 text-xs';
+      } else {
+        icon.className = 'fas fa-sun text-1e293b text-xs';
+      }
+      
+      localStorage.setItem('theme', theme);
+    }
+
+    setTheme(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(currentTheme);
+    });
+
+    // Scroll Progress
+    function updateScrollProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollProgress);
+
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking on a link
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
+

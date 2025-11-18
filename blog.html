@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="https://schema.org/Blog">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Development Blog - Laravel, PHP, React.js Tutorials | Azhagirishankar K</title>
+  <meta name="description" content="Expert web development blog covering Laravel, PHP, React.js, MySQL optimization, REST APIs, and modern frontend development. Learn from a Full Stack Developer with 2+ years of experience.">
+  <meta name="keywords" content="Laravel Tutorial, PHP Blog, React.js Guide, MySQL Optimization, REST API Development, Web Development Tips, Full Stack Development, Laravel Best Practices, PHP Performance">
+  <meta name="author" content="Azhagirishankar K">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://jerry5kas.github.io/portfolio/blog.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jerry5kas.github.io/portfolio/blog.html">
+  <meta property="og:title" content="Web Development Blog - Laravel, PHP, React.js Tutorials">
+  <meta property="og:description" content="Expert web development blog covering Laravel, PHP, React.js, MySQL optimization, and REST APIs. Learn from a Full Stack Developer.">
+  <meta property="og:image" content="https://jerry5kas.github.io/portfolio/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web Development Blog - Laravel, PHP, React.js Tutorials">
+  <meta name="twitter:description" content="Expert web development blog covering Laravel, PHP, React.js, MySQL optimization, and REST APIs.">
+  <meta name="twitter:image" content="https://jerry5kas.github.io/portfolio/og-image.jpg">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Azhagirishankar K - Web Development Blog",
+    "description": "Expert web development blog covering Laravel, PHP, React.js, MySQL optimization, and REST APIs",
+    "url": "https://jerry5kas.github.io/portfolio/blog.html",
+    "author": {
+      "@type": "Person",
+      "name": "Azhagirishankar K",
+      "url": "https://jerry5kas.github.io/portfolio/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Azhagirishankar K"
+    }
+  }
+  </script>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230ea5e9;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%237c3aed;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ef4444;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-family='Inter, system-ui, sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230ea5e9;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%237c3aed;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ef4444;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-family='Inter, system-ui, sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0ea5e9">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+            'display': ['Poppins', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --glass: rgba(255,255,255,0.06);
+      --primary: #0ea5e9;
+      --secondary: #7c3aed;
+      --accent: #ef4444;
+      --bg-dark: #0b1220;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #0b1220;
+      color: #f1f5f9;
+    }
+    .frost {
+      background: linear-gradient(135deg, var(--glass), rgba(255,255,255,0.01));
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+      z-index: 9999;
+      transition: width 0.1s ease;
+    }
+  </style>
+</head>
+<body class="bg-[#0b1220] text-slate-200">
+  <div class="scroll-progress"></div>
+  
+  <!-- Navigation -->
+  <header class="fixed w-full z-50 top-0 left-0 backdrop-blur-md bg-black/20 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center space-x-3">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+              AK
+            </div>
+            <div class="hidden sm:block">
+              <h1 class="text-lg font-bold text-white font-display">Azhagirishankar K</h1>
+              <p class="text-xs text-cyan-400 font-medium">Full Stack Developer</p>
+            </div>
+          </a>
+        </div>
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a href="index.html#about" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">About</a>
+          <a href="index.html#projects" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">Projects</a>
+          <a href="index.html#skills" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">Skills</a>
+          <a href="blog.html" class="px-4 py-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors">Blog</a>
+          <a href="index.html#contact" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
+        </nav>
+        <a href="index.html" class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all text-sm">
+          <i class="fas fa-home mr-2"></i>Home
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Blog Header -->
+  <section class="pt-32 pb-16 bg-gradient-to-b from-slate-900/20 to-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h1 class="text-5xl font-bold text-white mb-4 font-display">
+          Web Development <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Blog</span>
+        </h1>
+        <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+          Expert tutorials, tips, and insights on Laravel, PHP, React.js, MySQL, and modern web development
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="py-12 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Blog Post 1 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up">
+          <a href="blog/laravel-performance-optimization-guide.html">
+            <div class="h-48 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
+              <i class="fas fa-rocket text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Laravel</span>
+                <span class="text-slate-400 text-xs">Jan 15, 2025</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Laravel Performance Optimization: Complete Guide 2025</h2>
+              <p class="text-slate-300 text-sm mb-4">Learn advanced techniques to optimize Laravel applications, reduce load times by 40%, and improve database query performance.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <a href="blog/rest-api-best-practices-laravel.html">
+            <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+              <i class="fas fa-code text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">API</span>
+                <span class="text-slate-400 text-xs">Jan 12, 2025</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">REST API Best Practices in Laravel</h2>
+              <p class="text-slate-300 text-sm mb-4">Master RESTful API development with Laravel. Learn authentication, versioning, error handling, and API documentation best practices.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <a href="blog/mysql-query-optimization-tips.html">
+            <div class="h-48 bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+              <i class="fas fa-database text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">MySQL</span>
+                <span class="text-slate-400 text-xs">Jan 10, 2025</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">MySQL Query Optimization: 15 Essential Tips</h2>
+              <p class="text-slate-300 text-sm mb-4">Boost database performance with indexing strategies, query optimization techniques, and best practices for large-scale applications.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 4 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up">
+          <a href="blog/react-hooks-complete-guide.html">
+            <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+              <i class="fab fa-react text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">React.js</span>
+                <span class="text-slate-400 text-xs">Jan 8, 2025</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">React Hooks: Complete Guide for Beginners</h2>
+              <p class="text-slate-300 text-sm mb-4">Master React Hooks including useState, useEffect, useContext, and custom hooks. Build modern React applications efficiently.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 5 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <a href="blog/firebase-authentication-laravel.html">
+            <div class="h-48 bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center">
+              <i class="fas fa-fire text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded">Firebase</span>
+                <span class="text-slate-400 text-xs">Jan 5, 2025</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Firebase Authentication in Laravel: Step-by-Step</h2>
+              <p class="text-slate-300 text-sm mb-4">Integrate Firebase Authentication with Laravel backend. Learn JWT tokens, SMS OTP, and secure user management.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 6 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <a href="blog/tailwind-css-advanced-techniques.html">
+            <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+              <i class="fas fa-palette text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded">Tailwind CSS</span>
+                <span class="text-slate-400 text-xs">Jan 3, 2025</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Tailwind CSS Advanced Techniques & Best Practices</h2>
+              <p class="text-slate-300 text-sm mb-4">Master advanced Tailwind CSS patterns, custom configurations, and responsive design techniques for modern web applications.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 7 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up">
+          <a href="blog/laravel-livewire-real-time-apps.html">
+            <div class="h-48 bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
+              <i class="fas fa-bolt text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-indigo-500/20 text-indigo-400 text-xs rounded">Livewire</span>
+                <span class="text-slate-400 text-xs">Dec 30, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Building Real-Time Apps with Laravel Livewire</h2>
+              <p class="text-slate-300 text-sm mb-4">Create dynamic, real-time web applications without writing JavaScript. Learn Livewire components, events, and polling.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 8 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <a href="blog/php-security-best-practices.html">
+            <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center">
+              <i class="fas fa-shield-alt text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">PHP</span>
+                <span class="text-slate-400 text-xs">Dec 28, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">PHP Security Best Practices: Complete Guide</h2>
+              <p class="text-slate-300 text-sm mb-4">Protect your PHP applications from common vulnerabilities. Learn SQL injection prevention, XSS protection, and secure coding practices.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 9 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <a href="blog/database-migration-strategies.html">
+            <div class="h-48 bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center">
+              <i class="fas fa-exchange-alt text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-teal-500/20 text-teal-400 text-xs rounded">Database</span>
+                <span class="text-slate-400 text-xs">Dec 25, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Database Migration Strategies: Zero-Downtime Deployment</h2>
+              <p class="text-slate-300 text-sm mb-4">Learn advanced database migration techniques for large-scale applications. Ensure zero-downtime deployments and data integrity.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 10 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up">
+          <a href="blog/alpine-js-interactive-ui.html">
+            <div class="h-48 bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center">
+              <i class="fas fa-mountain text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Alpine.js</span>
+                <span class="text-slate-400 text-xs">Dec 22, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Alpine.js: Building Interactive UIs Without React</h2>
+              <p class="text-slate-300 text-sm mb-4">Create interactive user interfaces with Alpine.js. Lightweight alternative to React for simple to medium complexity applications.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 11 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <a href="blog/laravel-testing-phpunit-guide.html">
+            <div class="h-48 bg-gradient-to-br from-red-600 to-pink-600 flex items-center justify-center">
+              <i class="fas fa-vial text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Testing</span>
+                <span class="text-slate-400 text-xs">Dec 20, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Laravel Testing with PHPUnit: Complete Guide</h2>
+              <p class="text-slate-300 text-sm mb-4">Master unit testing, feature testing, and database testing in Laravel. Achieve 98% code coverage and bug-free deployments.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 12 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <a href="blog/gcp-deployment-laravel-apps.html">
+            <div class="h-48 bg-gradient-to-br from-blue-700 to-indigo-700 flex items-center justify-center">
+              <i class="fas fa-cloud text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">GCP</span>
+                <span class="text-slate-400 text-xs">Dec 18, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Deploying Laravel Apps on Google Cloud Platform</h2>
+              <p class="text-slate-300 text-sm mb-4">Step-by-step guide to deploying Laravel applications on GCP. Learn Cloud Run, App Engine, and Compute Engine configurations.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 13 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up">
+          <a href="blog/razorpay-payment-integration-laravel.html">
+            <div class="h-48 bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center">
+              <i class="fas fa-credit-card text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-indigo-500/20 text-indigo-400 text-xs rounded">Payment</span>
+                <span class="text-slate-400 text-xs">Dec 15, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Razorpay Payment Integration in Laravel</h2>
+              <p class="text-slate-300 text-sm mb-4">Integrate Razorpay payment gateway in Laravel applications. Handle payments, refunds, and webhooks securely.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 14 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <a href="blog/caching-strategies-laravel-redis.html">
+            <div class="h-48 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
+              <i class="fas fa-tachometer-alt text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Performance</span>
+                <span class="text-slate-400 text-xs">Dec 12, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Caching Strategies in Laravel with Redis</h2>
+              <p class="text-slate-300 text-sm mb-4">Implement advanced caching strategies using Redis in Laravel. Boost application performance and reduce database load.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 15 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <a href="blog/api-documentation-swagger-openapi.html">
+            <div class="h-48 bg-gradient-to-br from-green-600 to-emerald-600 flex items-center justify-center">
+              <i class="fas fa-book text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">API Docs</span>
+                <span class="text-slate-400 text-xs">Dec 10, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">API Documentation with Swagger/OpenAPI</h2>
+              <p class="text-slate-300 text-sm mb-4">Create comprehensive API documentation using Swagger and OpenAPI. Generate interactive docs with Scalar UI.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 16 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up">
+          <a href="blog/laravel-queues-jobs-background-processing.html">
+            <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+              <i class="fas fa-tasks text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded">Laravel</span>
+                <span class="text-slate-400 text-xs">Dec 8, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Laravel Queues & Jobs: Background Processing</h2>
+              <p class="text-slate-300 text-sm mb-4">Master Laravel queues for background job processing. Learn database queues, Redis queues, and job scheduling.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 17 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <a href="blog/mvc-architecture-laravel-explained.html">
+            <div class="h-48 bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center">
+              <i class="fas fa-sitemap text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Architecture</span>
+                <span class="text-slate-400 text-xs">Dec 5, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">MVC Architecture in Laravel: Complete Explanation</h2>
+              <p class="text-slate-300 text-sm mb-4">Deep dive into MVC architecture in Laravel. Understand Models, Views, Controllers, and best practices for scalable applications.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 18 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <a href="blog/full-stack-developer-career-guide.html">
+            <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+              <i class="fas fa-user-graduate text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded">Career</span>
+                <span class="text-slate-400 text-xs">Dec 3, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Full Stack Developer Career Guide 2025</h2>
+              <p class="text-slate-300 text-sm mb-4">Complete roadmap to becoming a successful Full Stack Developer. Skills, tools, and career progression tips.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 19 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up">
+          <a href="blog/git-github-best-practices-developers.html">
+            <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+              <i class="fab fa-github text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-gray-500/20 text-gray-400 text-xs rounded">Git</span>
+                <span class="text-slate-400 text-xs">Dec 1, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Git & GitHub Best Practices for Developers</h2>
+              <p class="text-slate-300 text-sm mb-4">Master Git workflows, branching strategies, and GitHub collaboration. Learn professional version control practices.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 20 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <a href="blog/ecommerce-laravel-development-guide.html">
+            <div class="h-48 bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
+              <i class="fas fa-shopping-bag text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">E-commerce</span>
+                <span class="text-slate-400 text-xs">Nov 28, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">E-commerce Development with Laravel: Complete Guide</h2>
+              <p class="text-slate-300 text-sm mb-4">Build scalable e-commerce platforms with Laravel. Learn product management, cart functionality, and payment integration.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 21 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <a href="blog/responsive-web-design-tailwind-css.html">
+            <div class="h-48 bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center">
+              <i class="fas fa-mobile-alt text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-violet-500/20 text-violet-400 text-xs rounded">Responsive</span>
+                <span class="text-slate-400 text-xs">Nov 25, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">Responsive Web Design with Tailwind CSS</h2>
+              <p class="text-slate-300 text-sm mb-4">Create beautiful, responsive websites that work perfectly on all devices using Tailwind CSS utility classes and breakpoints.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Blog Post 22 -->
+        <article class="frost rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300" data-aos="fade-up">
+          <a href="blog/ssl-dns-configuration-guide.html">
+            <div class="h-48 bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center">
+              <i class="fas fa-lock text-6xl text-white opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">DevOps</span>
+                <span class="text-slate-400 text-xs">Nov 22, 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-3">SSL & DNS Configuration: Complete Guide</h2>
+              <p class="text-slate-300 text-sm mb-4">Learn SSL certificate installation, DNS configuration, and domain setup for production Laravel applications.</p>
+              <div class="flex items-center text-cyan-400 text-sm">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-b from-slate-900/30 to-black border-t border-white/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-slate-400 text-sm">© 2025 Azhagirishankar K. All rights reserved.</p>
+      <div class="flex justify-center space-x-4 mt-4">
+        <a href="https://github.com/Jerry5kas" target="_blank" class="text-slate-400 hover:text-cyan-400 transition-colors">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/azhagiri-shankar" target="_blank" class="text-slate-400 hover:text-cyan-400 transition-colors">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+        <a href="mailto:azhagirishankar5@gmail.com" class="text-slate-400 hover:text-cyan-400 transition-colors">
+          <i class="fas fa-envelope text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    function updateScrollProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+    }
+    window.addEventListener('scroll', updateScrollProgress);
+  </script>
+</body>
+</html>
+
